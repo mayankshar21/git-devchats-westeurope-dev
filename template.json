@@ -1,0 +1,135 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "extensions_CustomScript_fileUris": {
+            "type": "Array"
+        },
+        "extensions_CustomScript_storageAccountName": {
+            "type": "SecureString"
+        },
+        "extensions_CustomScript_storageAccountKey": {
+            "type": "SecureString"
+        },
+        "extensions_CustomScript_commandToExecute": {
+            "type": "SecureString"
+        },
+        "virtualMachines_vml_learnthree_westeurope_dev_name": {
+            "defaultValue": "vml-learnthree-westeurope-dev",
+            "type": "String"
+        },
+        "disks_vml_learnthree_westeurope_dev_OsDisk_1_4887e18e5ba2448184eeef1a26fffe3c_externalid": {
+            "defaultValue": "/subscriptions/56a4394e-6c1e-4255-958f-17a40db529a5/resourceGroups/rg-learn-westeurope-dev/providers/Microsoft.Compute/disks/vml-learnthree-westeurope-dev_OsDisk_1_4887e18e5ba2448184eeef1a26fffe3c",
+            "type": "String"
+        },
+        "networkInterfaces_vml_learnthree_westeurope_dev324_externalid": {
+            "defaultValue": "/subscriptions/56a4394e-6c1e-4255-958f-17a40db529a5/resourceGroups/rg-learn-westeurope-dev/providers/Microsoft.Network/networkInterfaces/vml-learnthree-westeurope-dev324",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Compute/virtualMachines",
+            "apiVersion": "2024-07-01",
+            "name": "[parameters('virtualMachines_vml_learnthree_westeurope_dev_name')]",
+            "location": "westeurope",
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "Standard_B1s"
+                },
+                "additionalCapabilities": {
+                    "hibernationEnabled": false
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "canonical",
+                        "offer": "ubuntu-24_04-lts",
+                        "sku": "server",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Linux",
+                        "name": "[concat(parameters('virtualMachines_vml_learnthree_westeurope_dev_name'), '_OsDisk_1_4887e18e5ba2448184eeef1a26fffe3c')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "id": "[parameters('disks_vml_learnthree_westeurope_dev_OsDisk_1_4887e18e5ba2448184eeef1a26fffe3c_externalid')]"
+                        },
+                        "deleteOption": "Delete"
+                    },
+                    "dataDisks": [],
+                    "diskControllerType": "SCSI"
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_vml_learnthree_westeurope_dev_name')]",
+                    "adminUsername": "azureuser",
+                    "linuxConfiguration": {
+                        "disablePasswordAuthentication": true,
+                        "ssh": {
+                            "publicKeys": [
+                                {
+                                    "path": "/home/azureuser/.ssh/authorized_keys",
+                                    "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDXD/6K32sr/jVRyJ9ePlYbkyVuHlvO9JFP24lU47iPL1Qgp3HSLRRTSw04WftKj/rAjpa2yf1JGcqS+0/SdR+YP79NBgCfy/rg8/ogaD1Cx2xzFOE14rLoTkIoRWEpqWi+VFdBMVS4N2AGsCJt7W5trnlbwqxxtubF+UO2FGZ2QPpIIAvHMXsePQUJcWyxF39QNc7i3zq0tWMLrQHA5W9847e+31usIUifRq2JWj4xFqGJVSHbfsJ7LZx97CVURjJxv/Xl7wyL+5l6wWHRt1ig9WpOKXTEyqH4WaW5EW4bKoL5et7RC4UWJqebpWDeVltM+pZzF74LrUM+m3+Yjywqmzejh8QL/xPL7RUIU0sLMhQd3CnfZSJFsOw1axXZvupPEs3seNlKiDPdna4rhlKindp3+SOc9H1k8ZPeEPxfEw246HxtQ59RwuqpreTL0xpCIHcUDj/r0fiB2cdJpXCmMXBxPX6NvaSpk6V9TQ4VTXiYv2FfVyAol8MEr0t3SPk= generated-by-azure"
+                                }
+                            ]
+                        },
+                        "provisionVMAgent": true,
+                        "patchSettings": {
+                            "patchMode": "ImageDefault",
+                            "assessmentMode": "ImageDefault"
+                        }
+                    },
+                    "secrets": [],
+                    "allowExtensionOperations": true,
+                    "requireGuestProvisionSignal": true
+                },
+                "securityProfile": {
+                    "uefiSettings": {
+                        "secureBootEnabled": true,
+                        "vTpmEnabled": true
+                    },
+                    "securityType": "TrustedLaunch"
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[parameters('networkInterfaces_vml_learnthree_westeurope_dev324_externalid')]",
+                            "properties": {
+                                "deleteOption": "Detach"
+                            }
+                        }
+                    ]
+                },
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": true
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "apiVersion": "2024-07-01",
+            "name": "[concat(parameters('virtualMachines_vml_learnthree_westeurope_dev_name'), '/CustomScript')]",
+            "location": "westeurope",
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_vml_learnthree_westeurope_dev_name'))]"
+            ],
+            "properties": {
+                "autoUpgradeMinorVersion": true,
+                "publisher": "Microsoft.Azure.Extensions",
+                "type": "CustomScript",
+                "typeHandlerVersion": "2.0",
+                "settings": {
+                    "fileUris": "[parameters('extensions_CustomScript_fileUris')]"
+                },
+                "protectedSettings": {
+                    "storageAccountName": "[parameters('extensions_CustomScript_storageAccountName')]",
+                    "storageAccountKey": "[parameters('extensions_CustomScript_storageAccountKey')]",
+                    "commandToExecute": "[parameters('extensions_CustomScript_commandToExecute')]"
+                }
+            }
+        }
+    ]
+}
