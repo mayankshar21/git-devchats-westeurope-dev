@@ -1,0 +1,15 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "networkInterfaces_vml_learnthree_westeurope_dev324_name": {
+            "value": "nf-learntwo-westeurope-two"
+        },
+        "virtualNetworks_vml_learn_westeurope_dev_vnet_externalid": {
+            "value": "/subscriptions/56a4394e-6c1e-4255-958f-17a40db529a5/resourceGroups/rg-learn-westeurope-dev/providers/Microsoft.Network/virtualNetworks/vml-learn-westeurope-dev-vnet"
+        },
+        "networkSecurityGroups_vml_learnthree_westeurope_dev_nsg_externalid": {
+            "value": "/subscriptions/56a4394e-6c1e-4255-958f-17a40db529a5/resourceGroups/rg-newmayank-westeurope-dev/providers/Microsoft.Network/networkSecurityGroups/nsg-learntwo-westeurope-dev-two"
+        }
+    }
+}

@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "networkSecurityGroups_vml_learnthree_westeurope_dev_nsg_name": {
-            "value": "vml-newmayank-westeurope-dev-nsg"
+            "value": "nsg-learntwo-westeurope-dev-two"
         }
     }
 }

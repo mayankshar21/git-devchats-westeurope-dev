@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "extensions_CustomScript_fileUris": {
+            "value": ["https://stlearnwesteuropedev.blob.core.windows.net/ac-learn-westeurope-dev/linuxscript.sh"]
+        },
+        "extensions_CustomScript_commandToExecute": {
+            "value": "sh linuxscript.sh"
+        },
+        "virtualMachines_vml_learnthree_westeurope_dev_name": {
+            "value": "vml-learntwo-westeurope-dev-one"
+        },
+        "disks_vml_learnthree_westeurope_dev_OsDisk_1_4887e18e5ba2448184eeef1a26fffe3c_externalid": {
+            "value": "/subscriptions/56a4394e-6c1e-4255-958f-17a40db529a5/resourceGroups/rg-learn-westeurope-dev/providers/Microsoft.Compute/disks/new-vml-learn-westeurope-dev_OsDisk_1_c36e258c2bb34db4b04a01381158c1b9"
+        },
+        "networkInterfaces_vml_learnthree_westeurope_dev324_externalid": {
+            "value": "/subscriptions/56a4394e-6c1e-4255-958f-17a40db529a5/resourceGroups/rg-learn-westeurope-dev/providers/Microsoft.Network/networkInterfaces/nf-learntwo-westeurope-one"
+        }
+    }
+}

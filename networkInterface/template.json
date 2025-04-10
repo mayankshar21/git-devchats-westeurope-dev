@@ -36,12 +36,7 @@
                                 "id": "[concat(parameters('virtualNetworks_vml_learn_westeurope_dev_vnet_externalid'), '/subnets/default')]"
                             },
                             "primary": true,
-                            "privateIPAddressVersion": "IPv4",
-                            "loadBalancerBackendAddressPools": [
-                                {
-                                    "id": "[concat(parameters('loadBalancers_lbe_learn_westeurope_dev_externalid'), '/backendAddressPools/bp-learn-westeurope-dev')]"
-                                }
-                            ]
+                            "privateIPAddressVersion": "IPv4"
                         }
                     }
                 ],

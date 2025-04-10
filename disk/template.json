@@ -1,0 +1,50 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "disks_vml_learn_westeurope_dev_OsDisk_1_c36e258c2bb34db4b04a01381158c1b9_name": {
+            "defaultValue": "vml-learn-westeurope-dev_OsDisk_1_c36e258c2bb34db4b04a01381158c1b9",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Compute/disks",
+            "apiVersion": "2024-03-02",
+            "name": "[parameters('disks_vml_learn_westeurope_dev_OsDisk_1_c36e258c2bb34db4b04a01381158c1b9_name')]",
+            "location": "westeurope",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "properties": {
+                "osType": "Linux",
+                "hyperVGeneration": "V2",
+                "supportsHibernation": true,
+                "supportedCapabilities": {
+                    "diskControllerTypes": "SCSI, NVMe",
+                    "acceleratedNetwork": true,
+                    "architecture": "x64"
+                },
+                "creationData": {
+                    "createOption": "FromImage",
+                    "imageReference": {
+                        "id": "/Subscriptions/56a4394e-6c1e-4255-958f-17a40db529a5/Providers/Microsoft.Compute/Locations/westeurope/Publishers/canonical/ArtifactTypes/VMImage/Offers/ubuntu-24_04-lts/Skus/server/Versions/24.04.202502040"
+                    }
+                },
+                "diskSizeGB": 30,
+                "diskIOPSReadWrite": 500,
+                "diskMBpsReadWrite": 60,
+                "encryption": {
+                    "type": "EncryptionAtRestWithPlatformKey"
+                },
+                "networkAccessPolicy": "AllowAll",
+                "securityProfile": {
+                    "securityType": "TrustedLaunch"
+                },
+                "publicNetworkAccess": "Enabled"
+            }
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "disks_vml_learn_westeurope_dev_OsDisk_1_c36e258c2bb34db4b04a01381158c1b9_name": {
+            "value": "new-vml-learn-westeurope-dev_OsDisk_1_c36e258c2bb34db4b04a01381158c1b9"
+        }
+    }
+}
