@@ -13,11 +13,11 @@
             "type": "String"
         },
         "disks_vml_learnthree_westeurope_dev_OsDisk_1_4887e18e5ba2448184eeef1a26fffe3c_externalid": {
-            "defaultValue": "/subscriptions/56a4394e-6c1e-4255-958f-17a40db529a5/resourceGroups/rg-learn-westeurope-dev/providers/Microsoft.Compute/disks/vml-learnthree-westeurope-dev_OsDisk_1_4887e18e5ba2448184eeef1a26fffe3c",
+            "defaultValue": "/subscriptions/56a4394e-6c1e-4255-958f-17a40db529a5/resourceGroups/rg-learntwo-westeurope-dev/providers/Microsoft.Compute/disks/vml-learn-westeurope-dev_OsDisk_c36e258c2bb34db4b",
             "type": "String"
         },
         "networkInterfaces_vml_learnthree_westeurope_dev324_externalid": {
-            "defaultValue": "/subscriptions/56a4394e-6c1e-4255-958f-17a40db529a5/resourceGroups/rg-learn-westeurope-dev/providers/Microsoft.Network/networkInterfaces/vml-learnthree-westeurope-dev324",
+            "defaultValue": "/subscriptions/56a4394e-6c1e-4255-958f-17a40db529a5/resourceGroups/rg-learntwo-westeurope-dev/providers/Microsoft.Network/networkInterfaces/vml-learnthree-westeurope-dev324",
             "type": "String"
         }
     },
