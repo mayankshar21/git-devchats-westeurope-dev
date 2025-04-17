@@ -3,15 +3,15 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "networkInterfaces_vml_learnthree_westeurope_dev324_name": {
-            "defaultValue": "vml-learnthree-westeurope-dev324",
+            "defaultValue": "",
             "type": "String"
         },
         "virtualNetworks_vml_learn_westeurope_dev_vnet_externalid": {
-            "defaultValue": "/subscriptions/56a4394e-6c1e-4255-958f-17a40db529a5/resourceGroups/rg-learn-westeurope-dev/providers/Microsoft.Network/virtualNetworks/vml-learn-westeurope-dev-vnet",
+            "defaultValue": "",
             "type": "String"
         },
         "networkSecurityGroups_vml_learnthree_westeurope_dev_nsg_externalid": {
-            "defaultValue": "/subscriptions/56a4394e-6c1e-4255-958f-17a40db529a5/resourceGroups/rg-newmayank-westeurope-dev/providers/Microsoft.Network/networkSecurityGroups/vml-learnthree-westeurope-dev-nsg",
+            "defaultValue": "",
             "type": "String"
         }
     },
