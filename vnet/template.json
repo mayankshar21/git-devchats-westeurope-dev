@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "virtualNetworks_vml_learn_westeurope_dev_vnet_name": {
-            "defaultValue": "vml-learn-westeurope-dev-vnet",
+            "defaultValue": "",
             "type": "String"
         }
     },

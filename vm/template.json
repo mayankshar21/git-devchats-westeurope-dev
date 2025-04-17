@@ -38,7 +38,7 @@
                 "storageProfile": {
                     "osDisk": {
                         "osType": "Linux",
-                        "name": "[concat(parameters('virtualMachines_vml_learnthree_westeurope_dev_name'), '_OsDisk_1_4887e18e5ba2448184eeef1a26fffe3c')]",
+                        "name": "[parameters('disks_vml_learnthree_westeurope_dev_OsDisk_1_4887e18e5ba2448184eeef1a26fffe3c_externalid')]",
                         "createOption": "Attach",
                         "caching": "ReadWrite",
                         "managedDisk": {
