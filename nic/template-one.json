@@ -2,16 +2,12 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "networkInterfaces_vml_learnthree_westeurope_dev324_name": {
-            "defaultValue": "",
+        "networkInterfaces_nic_devchatsone_westeurope_dev_name": {
+            "defaultValue": "nic-devchatsone-westeurope-dev",
             "type": "String"
         },
-        "virtualNetworks_vml_learn_westeurope_dev_vnet_externalid": {
-            "defaultValue": "",
-            "type": "String"
-        },
-        "networkSecurityGroups_vml_learnthree_westeurope_dev_nsg_externalid": {
-            "defaultValue": "",
+        "virtualNetworks_vnet_devchats_westeurope_dev_externalid": {
+            "defaultValue": "/subscriptions/56a4394e-6c1e-4255-958f-17a40db529a5/resourceGroups/rg-devchats-westeurope-dev/providers/Microsoft.Network/virtualNetworks/vnet-devchats-westeurope-dev",
             "type": "String"
         }
     },
@@ -19,21 +15,21 @@
     "resources": [
         {
             "type": "Microsoft.Network/networkInterfaces",
-            "apiVersion": "2024-03-01",
-            "name": "[parameters('networkInterfaces_vml_learnthree_westeurope_dev324_name')]",
+            "apiVersion": "2024-05-01",
+            "name": "[parameters('networkInterfaces_nic_devchatsone_westeurope_dev_name')]",
             "location": "westeurope",
             "kind": "Regular",
             "properties": {
                 "ipConfigurations": [
                     {
-                        "name": "ipconfig1",
-                        "id": "[concat(resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_vml_learnthree_westeurope_dev324_name')), '/ipConfigurations/ipconfig1')]",
+                        "name": "Ipv4config",
+                        "id": "[concat(resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_nic_devchatsone_westeurope_dev_name')), '/ipConfigurations/Ipv4config')]",
                         "type": "Microsoft.Network/networkInterfaces/ipConfigurations",
                         "properties": {
-                            "privateIPAddress": "10.0.0.6",
+                            "privateIPAddress": "10.0.0.4",
                             "privateIPAllocationMethod": "Dynamic",
                             "subnet": {
-                                "id": "[concat(parameters('virtualNetworks_vml_learn_westeurope_dev_vnet_externalid'), '/subnets/default')]"
+                                "id": "[concat(parameters('virtualNetworks_vnet_devchats_westeurope_dev_externalid'), '/subnets/default')]"
                             },
                             "primary": true,
                             "privateIPAddressVersion": "IPv4"
@@ -46,9 +42,6 @@
                 "enableAcceleratedNetworking": false,
                 "enableIPForwarding": false,
                 "disableTcpStateTracking": false,
-                "networkSecurityGroup": {
-                    "id": "[parameters('networkSecurityGroups_vml_learnthree_westeurope_dev_nsg_externalid')]"
-                },
                 "nicType": "Standard",
                 "auxiliaryMode": "None",
                 "auxiliarySku": "None"

@@ -2,8 +2,8 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "networkSecurityGroups_vml_learnthree_westeurope_dev_nsg_name": {
-            "value": "nsg-learntwo-westeurope-dev-two"
+        "networkSecurityGroups_nsg_devchatsone_westeurope_dev_name": {
+            "value": null
         }
     }
 }

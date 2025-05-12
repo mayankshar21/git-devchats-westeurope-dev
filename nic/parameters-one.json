@@ -2,7 +2,10 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "virtualNetworks_vnet_devchats_westeurope_dev_name": {
+        "networkInterfaces_nic_devchatsone_westeurope_dev_name": {
+            "value": null
+        },
+        "virtualNetworks_vnet_devchats_westeurope_dev_externalid": {
             "value": null
         }
     }
