@@ -11,14 +11,19 @@ New-AzResourceGroup -Name $RESOURCE_GROUP -Location $LOCATION
 New-AzResourceGroupDeployment -ResourceGroupName $RESOURCE_GROUP -TemplateFile .\vnet\template.json -TemplateParameterFile .\vnet\parameters.json
 
 # deploy nsg one and network interface one
-New-AzResourceGroupDeployment -ResourceGroupName $resource_group -TemplateFile .\nsg\template-one.json -TemplateParameterFile .\nsg\parameters-one.json
-New-AzResourceGroupDeployment -ResourceGroupName $resource_group -TemplateFile .\nic\template-one.json -TemplateParameterFile .\nic\parameters-one.json
+New-AzResourceGroupDeployment -ResourceGroupName $RESOURCE_GROUP -TemplateFile .\nsg\template-one.json -TemplateParameterFile .\nsg\parameters-one.json
+New-AzResourceGroupDeployment -ResourceGroupName $RESOURCE_GROUP -TemplateFile .\nic\template-one.json -TemplateParameterFile .\nic\parameters-one.json
 
 # deploy nsg two and network interface two
-# New-AzResourceGroupDeployment -ResourceGroupName $resource_group -TemplateFile .\nsg\template.json -TemplateParameterFile .\nsg\parameters-2.json
-# New-AzResourceGroupDeployment -ResourceGroupName $resource_group -TemplateFile .\networkInterface\template.json -TemplateParameterFile .\networkInterface\parameters-2.json
+New-AzResourceGroupDeployment -ResourceGroupName $RESOURCE_GROUP -TemplateFile .\nsg\template-two.json -TemplateParameterFile .\nsg\parameters-two.json
+New-AzResourceGroupDeployment -ResourceGroupName $RESOURCE_GROUP -TemplateFile .\nic\template-two.json -TemplateParameterFile .\nic\parameters-two.json
 
-# deploy vms
+# deploy pip
+New-AzResourceGroupDeployment -ResourceGroupName $RESOURCE_GROUP -TemplateFile .\pip\template.json -TemplateParameterFile .\pip\parameters.json
+
+# deploy lbe
+
+# deploy vml
 # New-AzResourceGroupDeployment -ResourceGroupName $resource_group -TemplateFile .\disk\template.json -TemplateParameterFile .\disk\parameters-1.json
 # New-AzResourceGroupDeployment -ResourceGroupName $resource_group -TemplateFile .\vm\template.json -TemplateParameterFile .\vm\parameters-1.json
 # New-AzResourceGroupDeployment -ResourceGroupName $resource_group -TemplateFile .\vm\template.json -TemplateParameterFile .\vm\parameters-2.json

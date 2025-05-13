@@ -1,17 +1,22 @@
 # Latest Changes
 - Deleted old templates
-- Added vnet, nsg and nic template and parameters file
+- Created nsg two
+- Created nic two
+- Created pip
+
+# Latest Errors
+- No errors so far
 
 # Tasks Completed
 - Created rg
 - Created vnet
 - Created nsg one
 - Created nic one
+- Created nsg two
+- Created nic two
+- Created pip
 
 # Tasks Remaining
-- Create nsg two
-- Create nic two
+- Create lbe
 - Create vm one
 - Create vm two
-- Create lbe
-- Create pip
