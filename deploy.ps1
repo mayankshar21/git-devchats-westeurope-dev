@@ -21,7 +21,8 @@ New-AzResourceGroupDeployment -ResourceGroupName $RESOURCE_GROUP -TemplateFile .
 # deploy pip
 New-AzResourceGroupDeployment -ResourceGroupName $RESOURCE_GROUP -TemplateFile .\pip\template.json -TemplateParameterFile .\pip\parameters.json
 
-# deploy lbe
+# deploy st
+New-AzResourceGroupDeployment -ResourceGroupName $RESOURCE_GROUP -TemplateFile .\st\template.json -TemplateParameterFile .\st\parameters.json
 
 # deploy vml
 # New-AzResourceGroupDeployment -ResourceGroupName $resource_group -TemplateFile .\disk\template.json -TemplateParameterFile .\disk\parameters-1.json
