@@ -1,9 +1,3 @@
-# Latest Changes
-- Deleted old templates
-- Created nsg two
-- Created nic two
-- Created pip
-
 # Latest Errors
 - No errors so far
 
@@ -15,8 +9,11 @@
 - Created nsg two
 - Created nic two
 - Created pip
+- Created st
 
 # Tasks Remaining
-- Create lbe
+- Create scripts container
+- Upload scripts
 - Create vm one
 - Create vm two
+- Create lbe
